@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wordx"
+version = "0.2.3"
+authors = [
+  { name="inspirare6", email="inspirare6@163.com" },
+]
+description = "generate word documents in a sexy way"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+  "jinja2==3.1.2",
+  "lxml==4.9.2",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/inspirare6/wordx"
+"Bug Tracker" = "https://github.com/inspirare6/wordx/issues"

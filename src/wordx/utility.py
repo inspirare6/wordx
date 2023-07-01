@@ -4,37 +4,30 @@ import random
 
 
 class ResourceUtility:
-    def get_resource(self, res_path):
-        return self.get(f'word/{res_path}')
-
     def get_resource_as_str(self, res_path):
-        return self.get_resource(res_path).decode()
+        return self[f'word/{res_path}'].decode()
 
     def add_resource(res_path, file_bytes):
-        self.add(f'word/{res_path}', file_bytes)
-
-    def add_media(self, filename, file_bytes):
-        self.add_resource(f'media/{filename}', file_bytes)
+        self[f'word/{res_path}'] = file_bytes
 
     def get_document(self):
-        return self.get_resource('document.xml')
+        return self[f'word/document.xml']
 
     def extract_resource(self, res_path, file_path):
-        data = self.get_resource(res_path)
+        data = self[f'word/{res_path}']
         with open(file_path, 'wb') as f:
             f.write(data)
 
 
 class RelationUtility:
     def get_relations(self, xml_file):
-        return self.get(f'word/_rels/{xml_file}.rels') 
+        return self[f'word/_rels/{xml_file}.rels']
 
     def get_document_relations(self):
         return self.get_relations('document.xml')
 
     def save_relations(self, xml_file, relations):
-        relations_path = f'word/_rels/{xml_file}.rels'
-        self.replace(relations_path, relations)
+        self[f'word/_rels/{xml_file}.rels'] = relations
 
     def merge_relations(self, relations_a, relations_b):
         relation_tree = etree.fromstring(relations_a)

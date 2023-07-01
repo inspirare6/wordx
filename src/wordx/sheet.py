@@ -20,27 +20,27 @@ class Sheet(WordFile):
 
     def render_header(self, data):
         """页眉渲染"""
-        header_xml = self.render_template(self.get_resource_as_str('header.xml'), data)
-        self.replace('word/header.xml', header_xml)
+        header_xml = self.retrieve(f'word/header.xml')
+        self['word/header.xml'] = self.render_template(header_xml, data)
 
     def render_footer(self, data):
-        """页脚渲染"""
-        footer_xml = self.render_template(self.get_resource_as_str('footer.xml'), data)
-        self.replace('word/footer.xml', footer_xml)
+        """页脚渲染""" 
+        footer_xml = self.retrieve(f'word/footer.xml')
+        self['word/footer.xml'] = self.render_template(footer_xml, data)
 
     def render_document(self, data):
         """文档渲染"""
-        document_xml = self.render_template(self.get_resource_as_str('document.xml'), data)
-        self.replace('word/document.xml', document_xml)
+        document_xml = self.retrieve(f'word/document.xml')
+        self['word/document.xml'] = self.render_template(document_xml, data)
 
     def render_and_add_header(self, data):
         """添加页眉"""
-        header_xml_data = self.render_template(self.get_resource_as_str('header.xml'), data)
+        header_xml_data = self.render_template(self.retrieve(f'word/header.xml'), data)
         return self.add_header(header_xml_data)
 
     def render_and_add_footer(self, data):
         """添加页脚"""
-        footer_xml_data = self.render_template(self.get_resource_as_str('footer.xml'), data)
+        footer_xml_data = self.render_template(self.retrieve(f'word/footer.xml'), data)
         return self.add_footer(footer_xml_data)
 
     def render(self, data):

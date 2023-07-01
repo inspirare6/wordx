@@ -12,26 +12,26 @@ class WordFile(FakeZip, ResourceUtility, RelationUtility):
 
     def add_footer(self, footer):
         footer_relation_id, footer_file = self.add_footer_relation()
-        self.add(f'word/{footer_file}', footer)
+        self[f'word/{footer_file}'] = footer
         self.register_xml({'path': f'/word/{footer_file}','type': 'footer'})
         return footer_relation_id
 
     def add_header(self, header):
         header_relation_id, header_file = self.add_header_relation()
-        self.add(f'word/{header_file}', header)
+        self[f'word/{header_file}'] = header
         self.register_xml({'path': f'/word/{header_file}','type': 'header'})
         return header_relation_id
 
     def register_xml(self, xml_data):
         xml_path = xml_data['path']
         xml_type = xml_data['type']
-        content_type_xml = self.get('[Content_Types].xml')
+        content_type_xml = self['[Content_Types].xml']
         content_type_tree = etree.fromstring(content_type_xml)
         content_type = f'application/vnd.openxmlformats-officedocument.wordprocessingml.{xml_type}+xml'
         content_type_new_element = E.Override(PartName = xml_path, ContentType = content_type)
         content_type_tree.append(content_type_new_element)
         content_type_xml = etree.tostring(content_type_tree)
-        self.replace('[Content_Types].xml', content_type_xml)
+        self['[Content_Types].xml'] = content_type_xml
         return self
 
     def mask_relations(self, xml_file):
@@ -66,9 +66,9 @@ class WordFile(FakeZip, ResourceUtility, RelationUtility):
         wf_relations = wf.mask_relations('document.xml')
         for wf_relation in wf_relations:
             filename = 'word/' + wf_relation['target']
-            content = wf.get(filename)
+            content = wf[filename]
             filename_ = 'word/' + wf_relation['target_']
-            self.add(filename_, content)
+            self[filename_] = content
         # 合并映射
         document_relations = self.get_document_relations()
         document_relations_ = self.merge_relations(document_relations, wf_relations)
@@ -90,5 +90,5 @@ class WordFile(FakeZip, ResourceUtility, RelationUtility):
         etree1_body.remove(sect_pr)
         for element in etree2_body:
             etree1_body.append(element)
-        self.replace('word/document.xml', etree.tostring(etree1).decode())
+        self['word/document.xml'] = etree.tostring(etree1).decode()
        	self.save('merge.docx')

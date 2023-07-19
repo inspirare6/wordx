@@ -59,10 +59,10 @@ class RelationUtility:
         footer_relation_id = random.randint(1000,9999)
         footer_file = f'footer{footer_relation_id}.xml'
         self.add_relation('document.xml', 'footer', footer_file, footer_relation_id)
-        return footer_relation_id, footer_file
+        return f'rId{footer_relation_id}', footer_file
 
     def add_header_relation(self):
         header_relation_id = random.randint(1000,9999)
         header_file = f'header{header_relation_id}.xml'
         self.add_relation('document.xml', 'header', header_file, header_relation_id)
-        return header_relation_id, header_file
+        return f'rId{header_relation_id}', header_file

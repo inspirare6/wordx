@@ -1,31 +1,27 @@
 from wordx.utils.fake_zip import FakeZip
 from wordx.utils.tree import Tree, E
-from wordx.mixins import ResourceMixin, RelationMixin
+from wordx.mixins import RelationMixin
 from io import BytesIO
 import random
 
 
-class WordFile(ResourceMixin, RelationMixin, FakeZip):
-    """Word文档对象"""
+class WordFile(RelationMixin, FakeZip):
+    '''Word文档对象'''
     def __init__(self, file_path):
         super().__init__(file_path)
 
-    def add_footer(self, footer):
-        """添加页脚"""
-        footer_relation_id, footer_file = self.add_footer_relation()
-        self[f'word/{footer_file}'] = footer
-        self.register_xml({'path': f'/word/{footer_file}','type': 'footer'})
-        return footer_relation_id
-
-    def add_header(self, header):
-        """添加页眉"""
-        header_relation_id, header_file = self.add_header_relation()
-        self[f'word/{header_file}'] = header
-        self.register_xml({'path': f'/word/{header_file}','type': 'header'})
-        return header_relation_id
+    def add_xml(self, xml_type, xml_content):
+        '''添加xml文件
+        sheet.add_xml('footer', '123')'''
+        xml_relation_id = random.randint(1000,9999)
+        xml_filename = f'{xml_type}{xml_relation_id}.xml'
+        self.register_xml({'path': f'/word/{xml_filename}','type': xml_type})
+        self[f'word/{xml_filename}'] = xml_content
+        self.append_relation('document.xml', xml_type, xml_filename, xml_relation_id)
+        return f'rId{xml_relation_id}'
 
     def register_xml(self, xml_data):
-        """注册xml类型"""
+        '''注册xml类型'''
         xml_path = xml_data['path']
         xml_type = xml_data['type']
         content_type_tree = Tree(self['[Content_Types].xml'])

@@ -30,8 +30,8 @@ class Sheet(WordFile):
             xml_string = self.render_template(xml_template, data).encode()
             self[f'word/{xml_filename}.xml'] = xml_string
             return xml_string
-        except Exception as e:
-            print(e)
+        except AttributeError as e:
+            pass
 
     def render_and_add_xml(self, xml_type, data):
         xml_content = self.render_template(self.retrieve(f'word/{xml_type}.xml'), data)

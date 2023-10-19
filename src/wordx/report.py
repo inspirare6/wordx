@@ -44,10 +44,3 @@ class Report(Sheet):
                 item['content']['relation_id'] = relation_id
         super().render(data)
 
-
-if __name__ == '__main__':
-    report = Report('template.docx')
-    # f = open('data.json', 'r', encoding="UTF-8")
-    # data = json.loads(f.read().replace("\'","\""))
-
-

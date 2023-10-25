@@ -32,6 +32,8 @@ class Sheet(WordFile):
             return xml_string
         except AttributeError as e:
             pass
+        except FileNotFoundError as e:
+            print(e)
 
     def render_and_add_xml(self, xml_type, data):
         xml_content = self.render_template(self.retrieve(f'word/{xml_type}.xml'), data)

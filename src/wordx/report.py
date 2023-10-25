@@ -1,9 +1,5 @@
-import wordx
 from wordx.sheet import Sheet
-from jinja2 import Template
 from pathlib import Path
-from os.path import join as path_join
-import json
 import os 
 
 
@@ -20,7 +16,7 @@ class Report(Sheet):
         for root, dirs, filenames in os.walk(self.component_folder):
             for filename in filenames:
                 component_type = filename.split('.')[0]
-                file = open(Path(root) / filename, 'r')
+                file = open(Path(root) / filename, 'r', encoding='utf-8')
                 component_content = file.read()
                 template_xml += f"($ {'if' if index==0 else 'elif'} item['type']=='{component_type}' $){component_content}"
                 index += 1

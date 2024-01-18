@@ -18,7 +18,7 @@ class Sheet(WordFile):
             'tuple': tuple,
             'list': list
         }
-        return Template(tpl).render(**data, **lib)
+        return Template(tpl).render(**data, **lib).replace(' & ', ' &amp; ')
 
     def render_xml(self, xml_filename, data):
         try: 

@@ -14,18 +14,3 @@ class Tree:
         return etree.tostring(self.instance)
 
 
-# root = E.root(
-#     E.child1("Content for child 1"),
-#     E.child2("Content for child 2")
-# )
-
-
-# a = etree.tostring(root)
-# print(a)
-# tree = Tree(a)
-# print(bytes(tree))
-# tree += E.haha(id='12')
-# print(bytes(tree))
-# # print(type(tree))
-
-

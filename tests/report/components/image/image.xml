@@ -1,0 +1,11 @@
+($ with $) ($ set data=item['content'] $)
+<w:p>
+	<w:r>
+		<w:pict>
+			<v:shape style="width:{{data['width']}}pt;height:{{data['height']}}pt">
+				<v:imagedata r:id="{{data['relation_id']}}"/>
+			</v:shape>
+		</w:pict>
+	</w:r>
+</w:p>
+($ endwith $)

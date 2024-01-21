@@ -1,0 +1,22 @@
+($ with $) ($ set text=item['content'] $)
+<w:p>
+	<w:pPr>
+		<w:spacing w:line="490" w:lineRule="exact"/>
+		<w:rPr>
+			<w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="仿宋_GB2312" w:hAnsi="Times New Roman"/>
+			<w:b/>
+			<w:sz w:val="28"/>
+			<w:szCs w:val="20"/>
+		</w:rPr>
+	</w:pPr>
+	<w:r w:rsidRPr="002948CD">
+		<w:rPr>
+			<w:rFonts w:ascii="Times New Roman" w:cs="Times New Roman" w:eastAsia="仿宋_GB2312" w:hAnsi="Times New Roman"/>
+			<w:b/>
+			<w:sz w:val="28"/>
+			<w:szCs w:val="20"/>
+		</w:rPr>
+		<w:t>((text))</w:t>
+	</w:r>
+</w:p>
+($ endwith $)

@@ -1,0 +1,9 @@
+<w:p>
+	<w:pPr>
+		<w:widowControl/>
+		<w:jc w:val="left"/>
+	</w:pPr>
+	<w:r>
+		<w:br w:type="page"/>
+	</w:r>
+</w:p>

@@ -1,6 +1,7 @@
 from wordx.word_file import WordFile
 from jinja2 import Template
 from pathlib import Path
+import math 
 
 
 class Sheet(WordFile):
@@ -16,7 +17,13 @@ class Sheet(WordFile):
             'len': len,
             'isinstance': isinstance,
             'tuple': tuple,
-            'list': list
+            'list': list,
+            'str': str,
+            'float': float,
+            'int': int,
+            'range': range,
+            'ceil': math.ceil,
+            'type': type
         }
         return Template(tpl).render(**data, **lib).replace(' & ', ' &amp; ')
 

@@ -1,0 +1,114 @@
+<w:sdt>
+	<w:sdtPr>
+		<w:id w:val="98381352"/>
+		<w:docPartObj>
+			<w:docPartGallery w:val="Page Numbers (Top of Page)"/>
+			<w:docPartUnique/>
+		</w:docPartObj>
+	</w:sdtPr>
+	<w:sdtContent>
+		<w:bookmarkStart w:id="0" w:name="_GoBack" w:displacedByCustomXml="prev"/>
+		<w:bookmarkEnd w:id="0" w:displacedByCustomXml="prev"/>
+		<w:p w:rsidR="00DC4305" w:rsidRDefault="00DC4305">
+			<w:pPr>
+				<w:pStyle w:val="a3"/>
+			</w:pPr>
+			<w:r>
+				<w:rPr>
+					<w:lang w:val="zh-CN"/>
+				</w:rPr>
+				<w:t xml:space="preserve"> </w:t>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:b/>
+					<w:bCs/>
+					<w:sz w:val="24"/>
+					<w:szCs w:val="24"/>
+				</w:rPr>
+				<w:fldChar w:fldCharType="begin"/>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:b/>
+					<w:bCs/>
+				</w:rPr>
+				<w:instrText>PAGE</w:instrText>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:b/>
+					<w:bCs/>
+					<w:sz w:val="24"/>
+					<w:szCs w:val="24"/>
+				</w:rPr>
+				<w:fldChar w:fldCharType="separate"/>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:b/>
+					<w:bCs/>
+					<w:noProof/>
+				</w:rPr>
+				<w:t>1</w:t>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:b/>
+					<w:bCs/>
+					<w:sz w:val="24"/>
+					<w:szCs w:val="24"/>
+				</w:rPr>
+				<w:fldChar w:fldCharType="end"/>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:lang w:val="zh-CN"/>
+				</w:rPr>
+				<w:t xml:space="preserve"> / </w:t>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:b/>
+					<w:bCs/>
+					<w:sz w:val="24"/>
+					<w:szCs w:val="24"/>
+				</w:rPr>
+				<w:fldChar w:fldCharType="begin"/>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:b/>
+					<w:bCs/>
+				</w:rPr>
+				<w:instrText>NUMPAGES</w:instrText>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:b/>
+					<w:bCs/>
+					<w:sz w:val="24"/>
+					<w:szCs w:val="24"/>
+				</w:rPr>
+				<w:fldChar w:fldCharType="separate"/>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:b/>
+					<w:bCs/>
+					<w:noProof/>
+				</w:rPr>
+				<w:t>1</w:t>
+			</w:r>
+			<w:r>
+				<w:rPr>
+					<w:b/>
+					<w:bCs/>
+					<w:sz w:val="24"/>
+					<w:szCs w:val="24"/>
+				</w:rPr>
+				<w:fldChar w:fldCharType="end"/>
+			</w:r>
+		</w:p>
+	</w:sdtContent>
+</w:sdt>
